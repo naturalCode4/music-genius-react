@@ -6,7 +6,7 @@ function SongDisplay({songInfo, gettingNewSong}) {
     return (
         <div id="song_display" style={{justifyContent: gettingNewSong ? 'center' : 'space-between'}}>
             {!songInfo.trackName && !songInfo.albumCover && !gettingNewSong &&
-                <div id="song_display_text" style={{maxWidth: '313px', margin: 'auto', padding: '0'}}>
+                <div id="song_display_text" style={{maxWidth: '320px', margin: 'auto', padding: '0'}}>
                     <p>Discover music based on your preferences!</p>
                     <p>Choose a musical Genre,<br></br>set the six filter sliders,<br></br>& hit “New Song”</p>
                 </div>

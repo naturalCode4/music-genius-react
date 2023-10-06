@@ -16,8 +16,10 @@ function NewSongButton({filterLevels, selectedGenre, setSongInfo, setGettingNewS
     const getNewSong = async () => {
         setGettingNewSong(true)
         try {
+            console.log('requesting server for new song')
             const newSong = await callServerForNewSong(formattedFilters)
             setSongInfo(newSong.data)
+            console.log('newSong.data: ', newSong.data)
             setGettingNewSong(false)
         } catch (err) {
             console.log('Error calling getNewSong ==>:', err)
