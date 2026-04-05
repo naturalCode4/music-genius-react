@@ -3,6 +3,8 @@ import { callServerForNewSong } from "../../../utilities/api.js"
 
 function NewSongButton({filterLevels, selectedGenre, setSongInfo, setGettingNewSong}) {
 
+    console.log('hit NewSongButton')
+
     const formattedFilters = {
         genre: selectedGenre,
         danceability: filterLevels.danceability.disabled ? null : filterLevels.danceability.value,
@@ -18,6 +20,7 @@ function NewSongButton({filterLevels, selectedGenre, setSongInfo, setGettingNewS
         try {
             console.log('requesting server for new song')
             const newSong = await callServerForNewSong(formattedFilters)
+            console.log('hit 2')
             setSongInfo(newSong.data)
             console.log('newSong.data: ', newSong.data)
             setGettingNewSong(false)
